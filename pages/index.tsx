@@ -69,7 +69,7 @@ export default function Home({action = '/card'}){
                         </p>
                     </div>
                     <div className="mt-1 text-sm leading-5 text-center">
-                        <a href="http://asdasd" target="_blank" className="text-center font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                        <a href="https://bkyouth.org" target="_blank" className="text-center font-medium text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
                             https://bkyouth.org
                         </a>
                     </div>
