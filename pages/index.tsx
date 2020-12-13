@@ -27,11 +27,12 @@ export default function Home({action = '/card'}){
         <div
           className="max-w-2xl mx-auto flex flex-col items-center justify-center px-4"
         >
-    
-  
-          <h1 className="text-blue-900 font-black text-5xl  text-center">
+     <h1 className="text-blue-900 font-black text-5xl  text-center">
+    <img className="bg-indigo-700" src="http://bkyouth.org/wp-content/uploads/2018/09/logo_white-2.png" />
+    </h1>
+          <h2 className="text-blue-900 font-black text-5xl  text-center">
             Special Card for You
-          </h1>
+          </h2>
           <h2 className="text-indigo-700 text-sm font-semibold italic">
             Get your blessing by entering your name
           </h2>
