@@ -15,7 +15,6 @@ export default function Home({ action = '/card' }) {
 	};
 
 	const handleSubmit = preventDefault(() => {
-		alert(lang);
 		// Show Progress
 		router.push({
 			pathname: action,
