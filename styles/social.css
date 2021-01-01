@@ -1,0 +1,23 @@
+ul.social-media-list img {
+	padding: 5px;
+	border-radius: 5px;
+	background: #e9dce6;
+	width: 26px;
+	height: 26px;
+}
+
+ul.social-media-list li {
+	display: inline-block;
+	display: inline-block;
+	margin: 4px;
+	color: #b81995;
+}
+
+ul.social-media-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.social-media-list img:hover {
+	background-color: #eed1e8;
+}

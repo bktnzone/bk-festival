@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-
+import Typed from 'react-typed';
 const preventDefault = (f) => (e) => {
 	e.preventDefault();
 	f(e);
@@ -32,57 +32,99 @@ export default ({ slogan }) => {
 	const resp = slogan;
 	// "அன்பு என்பது செலுத்தும் போது உணரலாம். ஆனால் அமைதி என்பது முகத்திலேயே தெரியவரும். அத்தகைய அமைதியான முகப்பொலிவு கொண்டவர் நீங்கள்.";
 
+	// const myElement = document.querySelector('#sloganText')
+	// init(myElement, {loop:       false,disableBackTyping:true, showCursor: false, strings: [resp] })
+
 	return (
-		<div className="md:flex w-full ">
-			<div className="max-w-2xl mx-auto bg-red-100 flex flex-col items-center justify-center px-4">
-				<div className=" h-screen  py-6 w-full">
+		<div className="bg-hero md:flex w-full ">
+			<div className="max-w-2xl mx-auto bg-hero flex flex-col items-center justify-center px-4">
+				<div className=" h-screen  py-3 w-full">
 					<div className="my-3 bg-white shadow rounded-lg">
-						<div className="px-4 py-5 sm:p-6">
-							<div className="flex items-center">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-									className="h-5 w-5 text-green-600"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-									></path>
-								</svg>
-								<h3 className=" px-2 text-lg leading-6 font-semibold text-gray-900">
+						<div className="px-2 py-3 sm:p-3">
+							<div className=" items-center content-center">
+								<h3 className="px-2 font-semibold text-sm text-center  text-indigo-700">
 									Your Special Card is here
+									<p className="text-center">
+										<span style={{ color: '#b81995' }}>
+											Month of Peace (Jan 2021)
+										</span>
+									</p>
 								</h3>
 							</div>
 						</div>
 					</div>
 					<div className="my-3  shadow rounded-lg ">
 						<div className="containerCard" style={{ width: '100%' }}>
-							<img src="assets/card-bg1.jpg" className="rounded-sm" />
+							<img src="assets/card-bg.png" className="rounded-sm" />
 
 							<div className="centeredCard sm:p-1" style={{ width: '100%' }}>
-								<div className="text-red-900 font-extrabold font-serif">
+								<div
+									style={{ color: '#025ca1' }}
+									className="text-centered   text-lg font-extrabold font-serif"
+								>
 									Dear {q},
 								</div>
-								<p className="pt-1 text-red-900 text-sm">{resp}</p>
+								<p className="pt-1   text-lg" style={{ color: '#b81995' }}>
+									<Typed strings={[resp]} showCursor={false} typeSpeed={75} />
+								</p>
+							</div>
+							<div>
+								<div className="footer-social-icons">
+									<div className="footer-social-icons float-left">
+										<ul className="social-media-list">
+											<li>
+												<a>
+													<img
+														src="https://unpkg.com/simple-icons@latest/icons/facebook.svg"
+														alt="Facebook"
+														title="Facebook"
+													/>
+												</a>
+											</li>
+											<li>
+												<a>
+													<img
+														src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
+														alt="Twitter"
+														title="Twitter"
+													/>
+												</a>
+											</li>
+											<li>
+												<a>
+													<img
+														src="https://unpkg.com/simple-icons@latest/icons/instagram.svg"
+														alt="Instagram"
+														title="Instagram"
+													/>
+												</a>
+											</li>
+
+											<li>
+												<a>
+													<img
+														src="https://unpkg.com/simple-icons@latest/icons/youtube.svg"
+														alt="YouTube"
+														title="YouTube"
+													/>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<div className="text-xs float-right mt-2">
+										@Copyrights 2020.
+										<a target="_blank" href="https://www.brahmakumaris.com">
+											Brahma Kumaris
+										</a>
+										-
+										<a target="_blank" href="https://bkyouth.org">
+											Youth Wing
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div className="mt-2 max-w-xl text-xs font-medium leading-5 text-gray-500 overflow-hidden">
-					<p>@Copyrights 2020. Brahma Kumaris - Youth Wing</p>
-				</div>
-				<div className="mt-1 text-sm leading-5 text-center">
-					<a
-						href="https://tamil.brahmakumaris.com"
-						target="_blank"
-						className="text-center font-medium text-red-600 hover:text-red-500 transition ease-in-out duration-150"
-					>
-						https://tamil.brahmakumaris.com
-					</a>
 				</div>
 			</div>
 		</div>
