@@ -6,7 +6,7 @@ const preventDefault = (f) => (e) => {
 	f(e);
 };
 
-export default function Home({ action = '/card' }) {
+export default function Home({ action = '/ycard' }) {
 	const router = useRouter();
 	const [query, setQuery] = useState('');
 	const [lang, setLang] = useState('eng');
@@ -38,17 +38,21 @@ export default function Home({ action = '/card' }) {
 					</div>
 				</h1>
 
-				<h2 className="text-indigo-900 text-sm font-semibold">
-					<i>(An Intiative to Empower Global Youth)</i>
+				<h2 className="text-indigo-500 text-sm font-semibold">
+					(An Intiative to Empower Global Youth)
 				</h2>
-				<h2 className="text-indigo-500 text-sm font-semibold mt-10">
+
+				<h2 className="text-indigo-600 text-centered text-xl align-center text-sm font-semibold mt-10">
 					Month of Peace - January 2021
 				</h2>
 
+				<h2 className="text-indigo-700 text-centered text-sm  align-center text-sm font-semibold mt-3">
+					Get your Peace Card for this Month
+				</h2>
 				<div className=" w-full mt-6 flex rounded-md shadow-sm">
 					<div className="relative flex-grow focus-within:z-10">
 						<form onSubmit={handleSubmit}>
-							<div className="mt-2 text-center text-indigo-900">
+							<div className="mt-1 text-center text-indigo-900">
 								<ul className="segmented-control">
 									<li className="segmented-control__item ">
 										<input
@@ -119,22 +123,13 @@ export default function Home({ action = '/card' }) {
 										className="text-gray-700 py-3 form-input block w-full rounded-none rounded-l-md pl-5 transition ease-in-out duration-150 font-semibold sm:text-sm sm:leading-5"
 									/>
 								</div>
-								<button className="group -ml-px relative inline-flex items-center px-3 py-3 border border-indigo-300 text-sm leading-5 font-medium rounded-r-md text-white bg-indigo-700 hover:text-blue-700  focus:outline-none focus:shadow-outline-blue focus:border-indigo-300 active:bg-gray-100 active:text-indigo-700 transition ease-in-out duration-150">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										className="text-white h-5 w-5 group-hover:text-indigo-700"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											strokeWidth="2"
-											d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.568 18.005l-1.414-1.415 4.574-4.59-4.574-4.579 1.414-1.416 5.988 5.995-5.988 6.005z"
-										></path>
-									</svg>
-									<span className="ml-2 text-sm font-semibold"></span>
+								<button
+									onClick={handleSubmit}
+									className="h-11 bg-indigo-700 text-white hover:bg-indigo-600 font-bold  pl-2 rounded-r-md shadow hover:shadow-md outline-none focus:outline-none mr-1 pr-2 text-sm"
+									type="button"
+									style={{ transition: 'all .15s ease' }}
+								>
+									<i className="fas fa-heart"></i> Get Card →
 								</button>
 							</div>
 						</form>

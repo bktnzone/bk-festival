@@ -4,10 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+.dummy
 
 # testing
 /coverage
-
+_static
 old.next
 
 # next.js

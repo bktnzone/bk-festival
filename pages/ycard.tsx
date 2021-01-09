@@ -1,39 +1,27 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
+import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import Typed from 'react-typed';
-const preventDefault = (f) => (e) => {
-	e.preventDefault();
-	f(e);
+
+const sleep = (milliseconds) => {
+	return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 
-const API_URL = 'https://extreme-ip-lookup.com/json/';
+const fetcher = (url: string) =>
+	fetch(url).then(async (res) => {
+		await sleep(7000);
+		return res.json();
+	});
 
-async function fetcher(url) {
-	const res = await fetch(url);
-	const json = await res.json();
-	return json;
-}
-
-export async function getServerSideProps({ query }) {
-	const res = await fetch(
-		`https://script.google.com/macros/s/AKfycbwAzJ5b-vfELhl3fNHm7eePooOiwFZ_2KzCUfoAwffcczVY6_76_ZUQ6w/exec?fullname=${query.q}&lang=${query.l}`
-	);
-	const data = await res.json();
-	return {
-		props: {
-			slogan: data.slogan,
-		},
-	};
-}
-
-export default ({ slogan }) => {
+const YCard = (ctx) => {
 	const router = useRouter();
-	const { q, l } = router.query;
-	const resp = slogan;
-	// "அன்பு என்பது செலுத்தும் போது உணரலாம். ஆனால் அமைதி என்பது முகத்திலேயே தெரியவரும். அத்தகைய அமைதியான முகப்பொலிவு கொண்டவர் நீங்கள்.";
+	const query = router.query;
+	const url = `https://script.google.com/macros/s/AKfycbwAzJ5b-vfELhl3fNHm7eePooOiwFZ_2KzCUfoAwffcczVY6_76_ZUQ6w/exec?fullname=${query.q}&lang=${query.l}`;
 
-	// const myElement = document.querySelector('#sloganText')
-	// init(myElement, {loop:       false,disableBackTyping:true, showCursor: false, strings: [resp] })
+	const { data, error } = useSWR(url, fetcher);
+
+	//  if (error) return <h1>Something went wrong!</h1>
+	//  if (!data) return <h1>Loading...</h1>
 
 	return (
 		<div className="bg-hero md:flex w-full ">
@@ -55,17 +43,50 @@ export default ({ slogan }) => {
 					</div>
 					<div className="my-3  shadow rounded-lg ">
 						<div className="containerCard" style={{ width: '100%' }}>
-							<img src="assets/card-bg.png" className="rounded-sm" />
+							<img src="/assets/card-bg.png" className="rounded-sm" />
 
 							<div className="centeredCard sm:p-1" style={{ width: '100%' }}>
 								<div
 									style={{ color: '#025ca1' }}
 									className="text-centered   text-lg font-extrabold font-serif"
 								>
-									Dear {q},
+									<div className="flex items flex-col transition duration-500 ease-in-out  transform text-centered">
+										<p className="m-2">
+											{!data && 'Your card is getting generated..'}
+										</p>
+										<p className="flex items  items-center justify-center text-centered align-center">
+											{!data && (
+												<img
+													className="rounded-full"
+													style={{ height: '100px' }}
+													src="https://media0.giphy.com/media/YR2gvdcNw2fgzgTN7W/giphy.gif"
+												/>
+											)}{' '}
+										</p>
+										<p className="m-2">
+											{!data &&
+												'Till then spread the peace & love in and aroud you.'}{' '}
+										</p>
+									</div>
+
+									{data && (
+										<p className="transition duration-2500 ease-in-out">
+											{' '}
+											{data && data.disp_name}{' '}
+										</p>
+									)}
 								</div>
-								<p className="pt-1   text-lg" style={{ color: '#b81995' }}>
-									<Typed strings={[resp]} showCursor={false} typeSpeed={75} />
+								<p
+									className="pt-1 font-semibold  text-xl"
+									style={{ color: '#b81995' }}
+								>
+									{data && (
+										<Typed
+											strings={[data.slogan]}
+											showCursor={false}
+											typeSpeed={75}
+										/>
+									)}
 								</p>
 							</div>
 							<div>
@@ -73,7 +94,10 @@ export default ({ slogan }) => {
 									<div className="footer-social-icons float-left">
 										<ul className="social-media-list">
 											<li>
-												<a>
+												<a
+													href="https://www.facebook.com/bkYouthwing"
+													target="_blank"
+												>
 													<img
 														src="https://unpkg.com/simple-icons@latest/icons/facebook.svg"
 														alt="Facebook"
@@ -82,7 +106,10 @@ export default ({ slogan }) => {
 												</a>
 											</li>
 											<li>
-												<a>
+												<a
+													href="https://twitter.com/bkyouthwing"
+													target="_blank"
+												>
 													<img
 														src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
 														alt="Twitter"
@@ -91,7 +118,10 @@ export default ({ slogan }) => {
 												</a>
 											</li>
 											<li>
-												<a>
+												<a
+													href="https://www.instagram.com/bkyouthwing"
+													target="_blank"
+												>
 													<img
 														src="https://unpkg.com/simple-icons@latest/icons/instagram.svg"
 														alt="Instagram"
@@ -101,7 +131,10 @@ export default ({ slogan }) => {
 											</li>
 
 											<li>
-												<a>
+												<a
+													href="https://youtube.com/c/YouthWingBrahmaKumaris"
+													target="_blank"
+												>
 													<img
 														src="https://unpkg.com/simple-icons@latest/icons/youtube.svg"
 														alt="YouTube"
@@ -130,3 +163,5 @@ export default ({ slogan }) => {
 		</div>
 	);
 };
+
+export default YCard;

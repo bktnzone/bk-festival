@@ -1,11 +1,16 @@
 module.exports = {
-	future: {
-		removeDeprecatedGapUtilities: true,
-		purgeLayersByDefault: true,
-	},
-	purge: false,
+	purge: [],
 	theme: {
-		extend: {},
+		pink: {
+			light: '#ff7ce5',
+			DEFAULT: '#ff49db',
+			dark: '#ff16d1',
+		},
+		extend: {
+			backgroundImage: (theme) => ({
+				'cont-pattern': "url('/img/242.jpg')",
+			}),
+		},
 	},
 	variants: {},
 	plugins: [
