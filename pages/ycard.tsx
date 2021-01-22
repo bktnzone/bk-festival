@@ -24,28 +24,29 @@ const YCard = (ctx) => {
 	//  if (!data) return <h1>Loading...</h1>
 
 	return (
-		<div className="bg-hero md:flex w-full ">
-			<div className="max-w-2xl mx-auto bg-hero flex flex-col items-center justify-center px-4">
+		<div className="md:flex w-full bg-red-200 bg-hero bg-opacity-100">
+			<div className="max-w-2xl mx-auto flex flex-col items-center justify-center px-4">
 				<div className=" h-screen  py-3 w-full">
+					<div className="flex items-center text-center  justify-center mt-3">
+						<img src="/assets/bk-logo.png" className="w-5/5" />
+					</div>
+
+					<p className="text-indigo-500 font-black -mt-1 text-center">
+						Malaysia
+					</p>
 					<div className="my-3 bg-white shadow rounded-lg">
 						<div className="px-2 py-3 sm:p-3">
 							<div className=" items-center content-center">
 								<h3 className="px-2 font-semibold text-sm text-center  text-indigo-700">
-									Your Special Card is here
-									<p className="text-center">
-										<span style={{ color: '#b81995' }}>
-											Month of Peace (Jan 2021)
-										</span>
-									</p>
+									Your Special Wisdom Card is here
+									<p className="text-center"></p>
 								</h3>
 							</div>
 						</div>
 					</div>
-					<div className="my-3  shadow rounded-lg ">
+					<div className=" ">
 						<div className="containerCard" style={{ width: '100%' }}>
-							<img src="/assets/card-bg.png" className="rounded-sm" />
-
-							<div className="centeredCard sm:p-1" style={{ width: '100%' }}>
+							<div className="centeredCard sm:p-1 " style={{ width: '100%' }}>
 								<div
 									style={{ color: '#025ca1' }}
 									className="text-centered   text-lg font-extrabold font-serif"
@@ -88,73 +89,6 @@ const YCard = (ctx) => {
 										/>
 									)}
 								</p>
-							</div>
-							<div>
-								<div className="footer-social-icons">
-									<div className="footer-social-icons float-left">
-										<ul className="social-media-list">
-											<li>
-												<a
-													href="https://www.facebook.com/bkYouthwing"
-													target="_blank"
-												>
-													<img
-														src="https://unpkg.com/simple-icons@latest/icons/facebook.svg"
-														alt="Facebook"
-														title="Facebook"
-													/>
-												</a>
-											</li>
-											<li>
-												<a
-													href="https://twitter.com/bkyouthwing"
-													target="_blank"
-												>
-													<img
-														src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
-														alt="Twitter"
-														title="Twitter"
-													/>
-												</a>
-											</li>
-											<li>
-												<a
-													href="https://www.instagram.com/bkyouthwing"
-													target="_blank"
-												>
-													<img
-														src="https://unpkg.com/simple-icons@latest/icons/instagram.svg"
-														alt="Instagram"
-														title="Instagram"
-													/>
-												</a>
-											</li>
-
-											<li>
-												<a
-													href="https://youtube.com/c/YouthWingBrahmaKumaris"
-													target="_blank"
-												>
-													<img
-														src="https://unpkg.com/simple-icons@latest/icons/youtube.svg"
-														alt="YouTube"
-														title="YouTube"
-													/>
-												</a>
-											</li>
-										</ul>
-									</div>
-									<div className="text-xs float-right mt-2">
-										@Copyrights 2020.
-										<a target="_blank" href="https://www.brahmakumaris.com">
-											Brahma Kumaris
-										</a>
-										-
-										<a target="_blank" href="https://bkyouth.org">
-											Youth Wing
-										</a>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>

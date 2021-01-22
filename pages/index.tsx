@@ -9,7 +9,7 @@ const preventDefault = (f) => (e) => {
 export default function Home({ action = '/ycard' }) {
 	const router = useRouter();
 	const [query, setQuery] = useState('');
-	const [lang, setLang] = useState('eng');
+	const [lang, setLang] = useState('eng-mal');
 	const handleParam = (setValue) => (e) => {
 		setValue(e.target.value);
 	};
@@ -26,43 +26,43 @@ export default function Home({ action = '/ycard' }) {
 	});
 
 	return (
-		<div className="md:flex w-full h-screen ">
-			<div className="bg-hero h-screen -mt-20 max-w-2xl mx-auto bg-indigo-100 flex flex-col items-center justify-center px-4">
-				<h1 className="font-black  text-center ">
-					<div className="flex items-center text-center  justify-center logoimg">
-						<img src="/assets/logo_white.png" />
+		<div className="md:flex w-full h-screen">
+			<div className="h-screen  max-w-2xl mx-auto bg-red-200 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
+				<h1 className="font-black  text-center">
+					<div className="flex items-center text-center  justify-center -mt-4">
+						<img src="/assets/bk-logo.png" className="w-5/5" />
 					</div>
+					<p className="text-indigo-500 -mt-1">Malaysia</p>
 
-					<div className="pt-3 text-2xl  text-indigo-700">
-						Youth for Global Peace
+					<div className="pt-3 text-2xl   text-orange-500">
+						<p>Go M.A.D </p>
+						<p className="text-indigo-800">(make a difference)</p>
+						<h2 className="text-indigo-800 text-sm font-semibold"></h2>
+						<p> In the New Millenium</p>
 					</div>
 				</h1>
 
-				<h2 className="text-indigo-500 text-sm font-semibold">
-					(An Intiative to Empower Global Youth)
+				<h2 className="text-indigo-800 text-centered text-xl align-center text-sm font-semibold mt-10">
+					Words of Wisdom
 				</h2>
 
-				<h2 className="text-indigo-600 text-centered text-xl align-center text-sm font-semibold mt-10">
-					Month of Peace - January 2021
-				</h2>
-
-				<h2 className="text-indigo-700 text-centered text-sm  align-center text-sm font-semibold mt-3">
-					Get your Peace Card for this Month
+				<h2 className="text-indigo-800 text-centered text-sm  align-center text-sm font-semibold mt-3">
+					Get wisdom to make a difference now
 				</h2>
 				<div className=" w-full mt-6 flex rounded-md shadow-sm">
 					<div className="relative flex-grow focus-within:z-10">
 						<form onSubmit={handleSubmit}>
-							<div className="mt-1 text-center text-indigo-900">
+							<div className="mt-1 text-center text-indigo-900 hidden">
 								<ul className="segmented-control">
 									<li className="segmented-control__item ">
 										<input
 											className="segmented-control__input"
 											type="radio"
 											onChange={() => {
-												setLang('eng');
+												setLang('eng-mal');
 											}}
 											name="langType"
-											value="eng"
+											value="eng-mal"
 											defaultChecked
 											id="option-1"
 										/>
@@ -125,7 +125,7 @@ export default function Home({ action = '/ycard' }) {
 								</div>
 								<button
 									onClick={handleSubmit}
-									className="h-11 bg-indigo-700 text-white hover:bg-indigo-600 font-bold  pl-2 rounded-r-md shadow hover:shadow-md outline-none focus:outline-none mr-1 pr-2 text-sm"
+									className="h-11 bg-indigo-800 text-white hover:bg-indigo-600 font-bold  pl-2 rounded-r-md shadow hover:shadow-md outline-none focus:outline-none mr-1 pr-2 text-sm"
 									type="button"
 									style={{ transition: 'all .15s ease' }}
 								>
@@ -135,12 +135,16 @@ export default function Home({ action = '/ycard' }) {
 						</form>
 					</div>
 				</div>
+
 				<div className="mt-2 max-w-xl text-xs font-medium leading-5 text-gray-500 overflow-hidden">
 					<div className="text-xs">
 						@Copyrights 2020.
-						<a href="https://www.brahmakumaris.com">Brahma Kumaris</a>-
-						<a href="https://bkyouth.org">Youth Wing</a>
+						<a href="https://www.brahmakumaris.com">Brahma Kumaris </a> -
+						<a href="https://brahmakumaris.my"> Malaysia</a>
 					</div>
+				</div>
+				<div className="text-xs text-gray-500">
+					Contact : BK.Kala <a href="tel:+60 11-1061 4941">+60 11-1061 4941</a>
 				</div>
 			</div>
 		</div>
