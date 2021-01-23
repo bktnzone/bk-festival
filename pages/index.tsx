@@ -30,7 +30,7 @@ export default function Home({ action = '/ycard' }) {
 			<div className="h-screen  max-w-2xl mx-auto bg-red-200 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
 				<h1 className="font-black  text-center">
 					<div className="flex items-center text-center  justify-center -mt-4">
-						<img src="/assets/bk-logo.png" className="w-5/5" />
+						<img src="/assets/bk-logo-1.png" className="w-5/5" />
 					</div>
 					<p className="text-indigo-500 -mt-1">Malaysia</p>
 

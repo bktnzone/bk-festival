@@ -28,7 +28,7 @@ const YCard = (ctx) => {
 			<div className="max-w-2xl mx-auto flex flex-col items-center justify-center px-4">
 				<div className=" h-screen  py-3 w-full">
 					<div className="flex items-center text-center  justify-center mt-3">
-						<img src="/assets/bk-logo.png" className="w-5/5" />
+						<img src="/assets/bk-logo-1.png" className="w-5/5" />
 					</div>
 
 					<p className="text-indigo-500 font-black -mt-1 text-center">
