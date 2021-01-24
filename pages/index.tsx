@@ -27,26 +27,25 @@ export default function Home({ action = '/ycard' }) {
 
 	return (
 		<div className="md:flex w-full h-screen">
-			<div className="h-screen  max-w-2xl mx-auto bg-red-200 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
+			<div className="h-screen  max-w-2xl mx-auto bg-green-100 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
 				<h1 className="font-black  text-center">
-					<div className="flex items-center text-center  justify-center -mt-4">
+					<div className="flex items-center text-center  justify-center -mt-10">
 						<img src="/assets/bk-logo-1.png" className="w-5/5" />
 					</div>
-					<p className="text-indigo-500 -mt-1">Malaysia</p>
+					<p className="text-black-100  font-semibold text-2xl -mt-2">
+						Malaysia
+					</p>
 
-					<div className="pt-3 text-2xl   text-orange-500">
-						<p>Go M.A.D </p>
-						<p className="text-indigo-800">(make a difference)</p>
-						<h2 className="text-indigo-800 text-sm font-semibold"></h2>
-						<p> In the New Millenium</p>
+					<div className="pt-3 text-3xl   text-orange-500">
+						<p> New Consciousness </p> for <p>Great Conjunction of Time</p>
 					</div>
 				</h1>
 
-				<h2 className="text-indigo-800 text-centered text-xl align-center text-sm font-semibold mt-10">
+				<h2 className="text-indigo-800 text-centegreen text-xl align-center text-sm font-semibold mt-10">
 					Words of Wisdom
 				</h2>
 
-				<h2 className="text-indigo-800 text-centered text-sm  align-center text-sm font-semibold mt-3">
+				<h2 className="text-indigo-800 text-centegreen text-sm  align-center text-sm font-semibold mt-3">
 					Get wisdom to make a difference now
 				</h2>
 				<div className=" w-full mt-6 flex rounded-md shadow-sm">

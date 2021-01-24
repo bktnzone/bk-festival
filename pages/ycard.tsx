@@ -24,14 +24,14 @@ const YCard = (ctx) => {
 	//  if (!data) return <h1>Loading...</h1>
 
 	return (
-		<div className="md:flex w-full bg-red-200 bg-hero bg-opacity-100">
+		<div className="md:flex w-full bg-green-100 bg-hero bg-opacity-100">
 			<div className="max-w-2xl mx-auto flex flex-col items-center justify-center px-4">
 				<div className=" h-screen  py-3 w-full">
 					<div className="flex items-center text-center  justify-center mt-3">
 						<img src="/assets/bk-logo-1.png" className="w-5/5" />
 					</div>
 
-					<p className="text-indigo-500 font-black -mt-1 text-center">
+					<p className="text-black-100 text-center font-semibold text-2xl -mt-2">
 						Malaysia
 					</p>
 					<div className="my-3 bg-white shadow rounded-lg">
