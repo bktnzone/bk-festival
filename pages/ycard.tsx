@@ -66,7 +66,7 @@ const YCard = (ctx) => {
 										</p>
 										<p className="m-2">
 											{!data &&
-												'Till then spread the peace & love in and aroud you.'}{' '}
+												'Till then spread the peace & love in and around you.'}{' '}
 										</p>
 									</div>
 
