@@ -27,31 +27,32 @@ export default function Home({ action = '/ycard' }) {
 
 	return (
 		<div className="md:flex w-full h-screen">
-			<div className="h-screen  max-w-2xl mx-auto bg-green-100 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
+			<div className="h-screen  max-w-2xl mx-auto bg-indigo-100 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
 				<h1 className="font-black  text-center">
 					<div className="flex items-center text-center  justify-center -mt-10">
-						<img src="/assets/bk-logo-1.png" className="w-5/5" />
+						<img src="/assets/bk-logo-1.png" className="w-4/5" />
 					</div>
-					<p className="text-black-100  font-semibold text-2xl -mt-2">
+					<p className="text-black-80  font-semibold text-2xl -mt-2">
 						Malaysia
 					</p>
 
-					<div className="pt-3 text-3xl   text-orange-500">
-						<p> New Consciousness </p> for <p>Great Conjunction of Time</p>
+					<div className="pt-3 text-1xl   text-red-500">
+					<p className="pt-3 text-1xl   text-red-700">மகா சிவராத்திரி -  </p> <p>இருண்டகனத்தில் நம்பிக்கை ஒளி</p>
+						<p className="pt-3 text-1xl   text-red-700"> MAHA SHIVARATRI - </p> <p>IRUNDA GANATHIL NAMIBKKAI OLI</p>
+
 					</div>
 				</h1>
-
 				<h2 className="text-indigo-800 text-centegreen text-xl align-center text-sm font-semibold mt-10">
-					Words of Wisdom
+					Words of Blessings
 				</h2>
 
 				<h2 className="text-indigo-800 text-centegreen text-sm  align-center text-sm font-semibold mt-3">
-					Get wisdom to make a difference now
+					Get a special value blessing unique to you
 				</h2>
 				<div className=" w-full mt-6 flex rounded-md shadow-sm">
 					<div className="relative flex-grow focus-within:z-10">
 						<form onSubmit={handleSubmit}>
-							<div className="mt-1 text-center text-indigo-900 hidden">
+							<div className="mt-1 text-center text-indigo-900 ">
 								<ul className="segmented-control">
 									<li className="segmented-control__item ">
 										<input
@@ -72,7 +73,7 @@ export default function Home({ action = '/ycard' }) {
 											English
 										</label>
 									</li>
-									<li className="segmented-control__item">
+									<li className="segmented-control__item hidden" style={{"display":"none"}}>
 										<input
 											className="segmented-control__input"
 											type="radio"
@@ -143,7 +144,7 @@ export default function Home({ action = '/ycard' }) {
 					</div>
 				</div>
 				<div className="text-xs text-gray-500">
-					Contact : BK.Kala <a href="tel:+60 11-1061 4941">+60 11-1061 4941</a>
+					More Details : Contact : <a href="tel:+60 019-212 8677">+60 019-212 8677</a>
 				</div>
 			</div>
 		</div>

@@ -24,7 +24,7 @@ const YCard = (ctx) => {
 	//  if (!data) return <h1>Loading...</h1>
 
 	return (
-		<div className="md:flex w-full bg-green-100 bg-hero bg-opacity-100">
+		<div className="md:flex w-full bg-indigo-100 bg-hero bg-opacity-100">
 			<div className="max-w-2xl mx-auto flex flex-col items-center justify-center px-4">
 				<div className=" h-screen  py-3 w-full">
 					<div className="flex items-center text-center  justify-center mt-3">
@@ -38,7 +38,7 @@ const YCard = (ctx) => {
 						<div className="px-2 py-3 sm:p-3">
 							<div className=" items-center content-center">
 								<h3 className="px-2 font-semibold text-sm text-center  text-indigo-700">
-									Your Special Wisdom Card is here
+									Your Special Blessing Card is here
 									<p className="text-center"></p>
 								</h3>
 							</div>
