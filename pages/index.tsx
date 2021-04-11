@@ -9,7 +9,7 @@ const preventDefault = (f) => (e) => {
 export default function Home({ action = '/ycard' }) {
 	const router = useRouter();
 	const [query, setQuery] = useState('');
-	const [lang, setLang] = useState('eng-mal');
+	const [lang, setLang] = useState('tam-mal');
 	const handleParam = (setValue) => (e) => {
 		setValue(e.target.value);
 	};
@@ -27,34 +27,39 @@ export default function Home({ action = '/ycard' }) {
 
 	return (
 		<div className="md:flex w-full h-screen">
-			<div className="h-screen  max-w-2xl mx-auto bg-indigo-100 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
+			<div className="h-screen  max-w-2xl mx-auto bg-red-100 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
 				<h1 className="font-black  text-center">
-					<div className="flex items-center text-center  justify-center -mt-10">
+					<div className="flex items-center text-center  justify-center mt-10">
 						<img src="/assets/bk-logo-1.png" className="w-4/5" />
 					</div>
 					<p className="text-black-80  font-semibold text-2xl -mt-2">
 						Malaysia
 					</p>
+					<p className="mt-2"><a target="_blank" href="https://bkmevent.live/Women"> <u>Youtube Live Event</u></a></p>
 
-					<div className="pt-3 text-1xl   text-red-500">
-					<p className="pt-3 text-1xl   text-red-700">மகா சிவராத்திரி -  </p> <p>இருண்டகனத்தில் நம்பிக்கை ஒளி</p>
-						<p className="pt-3 text-1xl   text-red-700"> MAHA SHIVARATRI - </p> <p>IRUNDA GANATHIL NAMIBKKAI OLI</p>
+					<div className="pt-3 text-1xl ">
+					<p className="pt-2 text-2xl   text-red-800">பெண்ணே நீ விழித்திடு </p> <p className="pt-2 text-2xl  text-red-500 bg-opacity-75">ஜெகத்தை நீ ஜெயித்திடு!</p>
+					
 
 					</div>
 				</h1>
-				<h2 className="text-indigo-800 text-centegreen text-xl align-center text-sm font-semibold mt-10">
+				<h2 className="text-indigo-800 text-center text-xl align-center text-sm font-semibold mt-3">
 					Words of Blessings
 				</h2>
 
-				<h2 className="text-indigo-800 text-centegreen text-sm  align-center text-sm font-semibold mt-3">
-					Get a special value blessing unique to you
+				<h2 className="text-purple-800 text-center text-sm  align-center  font-semibold mt-3">
+				<p className="text-purple-400">Get a special value blessing unique to you on this Special Womens Day.</p>
+				<p className="text-purple-600">இந்த சிறப்பு மகளிர் தினத்தில் உங்களுக்கான தனித்துவம் வாய்ந்த சிறப்பு வரதானத்தை பெற்று கொள்ளவும்.</p>
+
+						
 				</h2>
+				
 				<div className=" w-full mt-6 flex rounded-md shadow-sm">
 					<div className="relative flex-grow focus-within:z-10">
 						<form onSubmit={handleSubmit}>
 							<div className="mt-1 text-center text-indigo-900 ">
 								<ul className="segmented-control">
-									<li className="segmented-control__item ">
+									<li className="segmented-control__item " style={{"display":"none"}}>
 										<input
 											className="segmented-control__input"
 											type="radio"
@@ -63,7 +68,7 @@ export default function Home({ action = '/ycard' }) {
 											}}
 											name="langType"
 											value="eng-mal"
-											defaultChecked
+											
 											id="option-1"
 										/>
 										<label
@@ -92,7 +97,7 @@ export default function Home({ action = '/ycard' }) {
 										</label>
 									</li>
 
-									<li className="segmented-control__item">
+									<li className="segmented-control__item" style={{"display":"none"}}>
 										<input
 											className="segmented-control__input"
 											type="radio"
@@ -100,6 +105,7 @@ export default function Home({ action = '/ycard' }) {
 											onChange={() => {
 												setLang('tam');
 											}}
+											defaultChecked
 											name="langType"
 											value="tam"
 										/>
@@ -117,7 +123,7 @@ export default function Home({ action = '/ycard' }) {
 								<div className="relative flex-grow focus-within:z-10">
 									<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"></div>
 									<input
-										placeholder="Your Name"
+										placeholder="உங்கள் பெயர் | Your Name"
 										value={query}
 										onChange={handleParam(setQuery)}
 										className="text-gray-700 py-3 form-input block w-full rounded-none rounded-l-md pl-5 transition ease-in-out duration-150 font-semibold sm:text-sm sm:leading-5"
@@ -138,13 +144,17 @@ export default function Home({ action = '/ycard' }) {
 
 				<div className="mt-2 max-w-xl text-xs font-medium leading-5 text-gray-500 overflow-hidden">
 					<div className="text-xs">
-						@Copyrights 2020.
+						@Copyrights 2021.
 						<a href="https://www.brahmakumaris.com">Brahma Kumaris </a> -
-						<a href="https://brahmakumaris.my"> Malaysia</a>
+						<a href="https://brahmakumaris.my"> Malaysia</a> 
+						
 					</div>
 				</div>
 				<div className="text-xs text-gray-500">
-					More Details : Contact : <a href="tel:+60 019-212 8677">+60 019-212 8677</a>
+					More Details : Contact : <a href="tel:+60 016-620 2881">+60 016-620 2881</a>
+				</div>
+				<div className="text-xs text-gray-500">
+					<br/>
 				</div>
 			</div>
 		</div>
