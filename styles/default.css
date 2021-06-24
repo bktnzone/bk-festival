@@ -155,6 +155,6 @@ html {
 }
 
 .segmented-control__input:checked + .segmented-control__label {
-	background: #ed8935;
+	background: #9d461e;
 	color: rgb(255, 255, 255);
 }
