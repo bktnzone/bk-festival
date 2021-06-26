@@ -72,18 +72,7 @@ export default function Home({ action = '/ycard' }) {
 					Gift of Blessings
 				</h2>
 
-				<div className="border-4 border-red-900 pl-10 pr-10 pt-10 pb-10">
-					<h1 className="text-3xl text-center">
-						This Event has Ended. <br />
-						Please checkout next year.
-					</h1>
-					<p className="text-md text-blue-800  text-center">
-						<a target="_blank" href="https://forms.gle/MZnEMDYXRT7gvosU7">
-							Click here to Leave your Feedback or Suggestion
-						</a>{' '}
-					</p>
-				</div>
-				<div className=" w-full mt-6 flex rounded-md shadow-sm hidden">
+				<div className=" w-full mt-6 flex rounded-md shadow-sm">
 					<div className="relative flex-grow focus-within:z-10">
 						<form onSubmit={handleSubmit}>
 							<div className="mt-1 text-center text-indigo-900 ">
