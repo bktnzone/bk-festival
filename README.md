@@ -1,7 +1,36 @@
-    color: #025ca1;
+# BK Festival Blessing Cards
 
-#b81995
+#### Technology Stack - Front End
 
-Deployment :
+- NextJS (React Server Side)
+- Uses CSR via NextJS Build Export
+- Tailwind CSS
 
-https://www.digitalocean.com/community/tutorials/how-to-deploy-a-next-js-app-to-app-platform
+#### Technology Stack - Backend End
+
+- Uses Slogan API
+- Slogan Card API is hosted on Google Sheets via Google Apps Script
+
+#### Local Development Setup
+
+1. Install the Dependencies
+
+   ```
+   npm install
+
+   or
+
+   yarn
+
+   ```
+
+2. Develop Locally
+
+   ```
+   npm run dev
+
+   or
+
+   yarn dev
+
+   ```
