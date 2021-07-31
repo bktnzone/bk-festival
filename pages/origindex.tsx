@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { stringify } from 'querystring';
+import { useEffect } from 'react';
 
 const preventDefault = (f) => (e) => {
 	e.preventDefault();
@@ -10,6 +12,8 @@ const preventDefault = (f) => (e) => {
 export default function Home({ action = '/ycard' }) {
 	const router = useRouter();
 	const [query, setQuery] = useState('');
+	const secretVal = router.asPath.indexOf('secret=3213') >= 0;
+	const [hasSecret] = useState(secretVal);
 	const [lang, setLang] = useState('tam');
 	const handleParam = (setValue) => (e) => {
 		setValue(e.target.value);
@@ -72,93 +76,108 @@ export default function Home({ action = '/ycard' }) {
 					Gift of Blessings
 				</h2>
 
-				<div className=" w-full mt-6 flex rounded-md shadow-sm">
-					<div className="relative flex-grow focus-within:z-10">
-						<form onSubmit={handleSubmit}>
-							<div className="mt-1 text-center text-indigo-900 ">
-								<ul className="segmented-control">
-									<li className="segmented-control__item ">
-										<input
-											className="segmented-control__input"
-											type="radio"
-											onChange={() => {
-												setLang('eng');
-											}}
-											name="langType"
-											value="eng"
-											id="option-1"
-										/>
-										<label
-											className="py-2 rounded-l  segmented-control__label text-sm font-semibold"
-											htmlFor="option-1"
-										>
-											English
-										</label>
-									</li>
-									<li className="segmented-control__item hidden">
-										<input
-											className="segmented-control__input"
-											type="radio"
-											id="option-2"
-											onChange={() => {
-												setLang('hin');
-											}}
-											name="langType"
-											value="hin"
-										/>
-										<label
-											className=" py-2 segmented-control__label text-sm font-semibold"
-											htmlFor="option-2"
-										>
-											हिंदी
-										</label>
-									</li>
-
-									<li className="segmented-control__item">
-										<input
-											className="segmented-control__input"
-											type="radio"
-											id="option-3"
-											onChange={() => {
-												setLang('tam');
-											}}
-											defaultChecked
-											name="langType"
-											value="tam"
-										/>
-										<label
-											className="rounded-r py-2 segmented-control__label text-sm font-semibold"
-											htmlFor="option-3"
-										>
-											தமிழ்
-										</label>
-									</li>
-								</ul>
-							</div>
-
-							<div className=" w-full mt-1 flex rounded-md shadow-sm">
-								<div className="relative flex-grow focus-within:z-10">
-									<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"></div>
-									<input
-										placeholder="Your Name | आपका नाम | உங்கள் பெயர் "
-										value={query}
-										onChange={handleParam(setQuery)}
-										className="text-gray-700 py-3 form-input block w-full rounded-none rounded-l-md pl-5 transition ease-in-out duration-150 font-semibold sm:text-sm sm:leading-5"
-									/>
-								</div>
-								<button
-									onClick={handleSubmit}
-									className="h-11 bg-red-800 text-white hover:bg-red-600 font-bold  pl-2 rounded-r-md shadow hover:shadow-md outline-none focus:outline-none mr-1 pr-2 text-sm"
-									type="button"
-									style={{ transition: 'all .15s ease' }}
-								>
-									<i className="fas fa-heart"></i> →
-								</button>
-							</div>
-						</form>
+				{hasSecret === false && (
+					<div className="border-0 border-red-900 pl-10 pr-10 pt-10 pb-10">
+						<h1 className="text-3xl text-center">
+							This Event has Ended. <br />
+							Please checkout next year.
+						</h1>
+						<p className="text-md text-blue-800  text-center">
+							<a target="_blank" href="https://forms.gle/MZnEMDYXRT7gvosU7">
+								Click here to Leave your Feedback or Suggestion
+							</a>{' '}
+						</p>
 					</div>
-				</div>
+				)}
 
+				{hasSecret === true && (
+					<div className=" w-full mt-6 flex rounded-md shadow-sm ">
+						<div className="relative flex-grow focus-within:z-10">
+							<form onSubmit={handleSubmit}>
+								<div className="mt-1 text-center text-indigo-900 ">
+									<ul className="segmented-control">
+										<li className="segmented-control__item ">
+											<input
+												className="segmented-control__input"
+												type="radio"
+												onChange={() => {
+													setLang('eng');
+												}}
+												name="langType"
+												value="eng"
+												id="option-1"
+											/>
+											<label
+												className="py-2 rounded-l  segmented-control__label text-sm font-semibold"
+												htmlFor="option-1"
+											>
+												English
+											</label>
+										</li>
+										<li className="segmented-control__item hidden">
+											<input
+												className="segmented-control__input"
+												type="radio"
+												id="option-2"
+												onChange={() => {
+													setLang('hin');
+												}}
+												name="langType"
+												value="hin"
+											/>
+											<label
+												className=" py-2 segmented-control__label text-sm font-semibold"
+												htmlFor="option-2"
+											>
+												हिंदी
+											</label>
+										</li>
+
+										<li className="segmented-control__item">
+											<input
+												className="segmented-control__input"
+												type="radio"
+												id="option-3"
+												onChange={() => {
+													setLang('tam');
+												}}
+												defaultChecked
+												name="langType"
+												value="tam"
+											/>
+											<label
+												className="rounded-r py-2 segmented-control__label text-sm font-semibold"
+												htmlFor="option-3"
+											>
+												தமிழ்
+											</label>
+										</li>
+									</ul>
+								</div>
+
+								<div className=" w-full mt-1 flex rounded-md shadow-sm">
+									<div className="relative flex-grow focus-within:z-10">
+										<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"></div>
+										<input
+											placeholder="Your Name | आपका नाम | உங்கள் பெயர் "
+											value={query}
+											onChange={handleParam(setQuery)}
+											className="text-gray-700 py-3 form-input block w-full rounded-none rounded-l-md pl-5 transition ease-in-out duration-150 font-semibold sm:text-sm sm:leading-5"
+										/>
+									</div>
+									<button
+										onClick={handleSubmit}
+										className="h-11 bg-red-800 text-white hover:bg-red-600 font-bold  pl-2 rounded-r-md shadow hover:shadow-md outline-none focus:outline-none mr-1 pr-2 text-sm"
+										type="button"
+										style={{ transition: 'all .15s ease' }}
+									>
+										<i className="fas fa-heart"></i> →
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				)}
 				<h2 className="text-black-800 text-center text-sm  align-center  font-semibold mt-3">
 					<p className="text-black-400">
 						Get a special value blessing unique to you on this Special Day.

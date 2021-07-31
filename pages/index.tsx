@@ -52,10 +52,14 @@ export default function Home({ action = '/ycard' }) {
 			</Head>
 			<div className="h-screen  max-w-2xl mx-auto bg-red-100 bg-hero bg-opacity-100  flex flex-col items-center justify-center px-4">
 				<h1 className="font-black  text-center">
-					<div className="flex items-center text-center  justify-center -mt-10 -ml-4">
-						<img src="/assets/bk-logo-1.png" className="w-3/5" />
+					<div className="flex items-center text-center  justify-center -mt-12">
+						<img src="/assets/bk-logo-1.png" className="w-3/5 " />
 					</div>
-					<p className="text-black-80  font-semibold text-md -mt-2 ml-3">
+					<div className="flex items-center text-center  justify-center ">
+						<img src="/img/rakshabandhan.png" className="rotateimg  w-3/5" />
+					</div>
+
+					<p className="text-black-80  font-semibold text-md ">
 						Tamilnadu Zone
 					</p>
 
@@ -75,20 +79,6 @@ export default function Home({ action = '/ycard' }) {
 				<h2 className="text-indigo-800 text-center text-xl align-center text-md font-semibold mt-3">
 					Gift of Blessings
 				</h2>
-
-				{hasSecret === false && (
-					<div className="border-0 border-red-900 pl-10 pr-10 pt-10 pb-10">
-						<h1 className="text-3xl text-center">
-							This Event has Ended. <br />
-							Please checkout next year.
-						</h1>
-						<p className="text-md text-blue-800  text-center">
-							<a target="_blank" href="https://forms.gle/MZnEMDYXRT7gvosU7">
-								Click here to Leave your Feedback or Suggestion
-							</a>{' '}
-						</p>
-					</div>
-				)}
 
 				{hasSecret === true && (
 					<div className=" w-full mt-6 flex rounded-md shadow-sm ">

@@ -34,3 +34,15 @@
    yarn dev
 
    ```
+
+#### Prepare for Deployment
+
+```
+
+- Export the final html and css files using npm run export
+- The final files will be available in the _static folder
+- Copy the files in the _static folder to the webserver. (Linux or IIS).
+- You can also freely host on vercel platform
+
+
+```

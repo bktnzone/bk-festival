@@ -158,3 +158,15 @@ html {
 	background: #9d461e;
 	color: rgb(255, 255, 255);
 }
+
+.rotateimg {
+	transform: rotate(21deg);
+}
+
+.bannerFondo {
+	height: 100px;
+}
+
+.orse {
+	background-color: #128386;
+}
