@@ -21,24 +21,28 @@ export default function CentreControl({}) {
 	const router = useRouter();
 	const [query, setQuery] = useState('');
 
-	const [isAuthorized] = useState(true);
+	const [isAuthorized, setAuthorized] = useState(false);
+	const [centrePIN, setCentrePIN] = useState('');
 
 	const handleParam = (setValue) => (e) => {
 		setValue(e.target.value);
 	};
 
-	const verifyPIN = async () => {
-		const params = { action: 'verify-pin' };
+	const verifyPIN = async (pinValue) => {
+		const params = { action: 'verify-pin', data: { pin: pinValue } };
 		const res = await fetch(`${base_url}?d=${JSON.stringify(params)}`);
-
 		const data = await res.json();
+		return data;
 	};
 
 	const handlePINEntry = preventDefault(async (e) => {
 		const pinValue = e.target.value;
 		if (pinValue.length == 4) {
 			//await sleep(3000);
-			await verifyPIN();
+			setCentrePIN(pinValue);
+			var actual: any = await verifyPIN(pinValue);
+			// var actual=JSON.parse(response);
+			if (actual.is_valid === true) setAuthorized(true);
 		}
 	});
 
@@ -113,7 +117,11 @@ export default function CentreControl({}) {
 										</div>
 										<div className="flex items-baseline mb-6">
 											<div className="space-x-2 flex">
-												<input type="text" className="border-2 rounded-md" />
+												<input
+													type="text"
+													size={25}
+													className="border-2 rounded-md"
+												/>
 											</div>
 										</div>
 										<div className="flex items-baseline">
@@ -123,7 +131,11 @@ export default function CentreControl({}) {
 										</div>
 										<div className="flex items-baseline mb-6">
 											<div className="space-x-2 flex">
-												<input type="text" className="border-2 rounded-md" />
+												<input
+													type="text"
+													size={25}
+													className="border-2 rounded-md"
+												/>
 											</div>
 										</div>
 
@@ -135,7 +147,8 @@ export default function CentreControl({}) {
 
 										<div className="flex items-baseline mb-6">
 											<div className="space-x-2 flex">
-												<input type="text" className="border-2 rounded-md" />
+												<input type="date" className="border-2 rounded-md" />
+												<input type="time" className="border-2 rounded-md" />
 											</div>
 										</div>
 										<label> Language </label>
@@ -144,75 +157,48 @@ export default function CentreControl({}) {
 												<label>
 													<input
 														className="w-4 h-4 flex items-center justify-center bg-gray-100 rounded-lg"
-														name="size"
+														name="lang_eng"
 														type="checkbox"
-														value="xs"
-														checked
+														value="eng"
 													/>
 													English
 												</label>
 												<label>
 													<input
 														className="w-4 h-4 flex items-center justify-center bg-gray-100 rounded-lg"
-														name="size"
+														name="lang_tam"
 														type="checkbox"
-														value="xs"
-														checked
+														value="tam"
 													/>
 													Tamil
 												</label>
 												<label>
 													<input
 														className="w-4 h-4 flex items-center justify-center bg-gray-100 rounded-lg"
-														name="size"
+														name="lang_hin"
 														type="checkbox"
-														value="xs"
-														checked
+														value="hin"
 													/>
 													Hindi
 												</label>
 												<label>
 													<input
 														className="w-4 h-4 flex items-center justify-center bg-gray-100 rounded-lg"
-														name="size"
+														name="lang_mal"
 														type="checkbox"
-														value="xs"
-														checked
+														value="mal"
 													/>
 													Malayalam
 												</label>
 												<label>
 													<input
 														className="w-4 h-4 flex items-center justify-center bg-gray-100 rounded-lg"
-														name="size"
+														name="lang_tel"
 														type="checkbox"
-														value="xs"
-														checked
+														value="tel"
 													/>
 													Telugu
 												</label>
-												<label>
-													<input
-														className="w-4 h-4 flex items-center justify-center bg-gray-100 rounded-lg"
-														name="size"
-														type="checkbox"
-														value="xs"
-														checked
-													/>
-													Kannada
-												</label>
-											</div>
-										</div>
-
-										<div className="flex items-baseline">
-											<div className="space-x-2 flex">
-												<label> Password </label>
-											</div>
-										</div>
-
-										<div className="flex items-baseline mb-6">
-											<div className="space-x-2 flex">
-												<input type="text" className="border-2 rounded-md" />
 											</div>
 										</div>
 

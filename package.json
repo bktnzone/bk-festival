@@ -16,8 +16,10 @@
 		}
 	},
 	"dependencies": {
+		"autoprefixer": "9.8.6",
 		"husky-run": "^0.0.0",
 		"next": "9.4.4",
+		"postcss": "^8.3.6",
 		"pretty-quick": "^3.1.0",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
@@ -43,7 +45,7 @@
 		"postcss-preset-env": "^6.7.0",
 		"prettier": "^2.0.5",
 		"tailwind-heropatterns": "^0.0.8",
-		"tailwindcss": "1.9.6",
+		"tailwindcss": "^2.2.7",
 		"typescript": "^3.9.3"
 	}
 }

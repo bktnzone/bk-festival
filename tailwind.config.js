@@ -1,24 +1,11 @@
 module.exports = {
-	future: {
-		removeDeprecatedGapUtilities: true,
-		purgeLayersByDefault: true,
-	},
-	purge: false,
+	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {},
 	},
-	variants: {},
-	plugins: [
-		require('@tailwindcss/custom-forms'),
-		require('tailwind-heropatterns')({
-			variants: [],
-			patterns: ['polka-dots', 'signal'],
-			colors: {
-				default: '#9C92AC',
-			},
-			opacity: {
-				default: '0.4',
-			},
-		}),
-	],
+	variants: {
+		extend: {},
+	},
+	plugins: [],
 };
