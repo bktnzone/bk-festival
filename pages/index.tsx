@@ -9,7 +9,7 @@ const preventDefault = (f) => (e) => {
 export default function Home({ action = '/ycard' }) {
 	const router = useRouter();
 	const [query, setQuery] = useState('');
-	const [lang, setLang] = useState('eng-mal');
+	const [lang, setLang] = useState('m-eng');
 	const handleParam = (setValue) => (e) => {
 		setValue(e.target.value);
 	};
@@ -37,13 +37,18 @@ export default function Home({ action = '/ycard' }) {
 					</p>
 
 					<div className="">
-					<p className="pt-2 text-2xl   text-green-900">Ancient Wisdom On</p>
-					
-						<p className="pt-3 text-2xl   text-green-700"> "Emotional Immunity" - Ken O'Donnell  </p> 
-						<p className="pt-1 text-sm   text-green-700">International Speaker, Director, Brahma Kumaris, South America</p>
-						<p className="pt-1 text-sm   text-black-700">16 Sep 2021 : 8:00 PM to 9:30 PM (MYT)</p>
-					
+						<p className="pt-2 text-2xl   text-green-900">Ancient Wisdom On</p>
 
+						<p className="pt-3 text-2xl   text-green-700">
+							{' '}
+							"Emotional Immunity" - Ken O'Donnell{' '}
+						</p>
+						<p className="pt-1 text-sm   text-green-700">
+							International Speaker, Director, Brahma Kumaris, South America
+						</p>
+						<p className="pt-1 text-sm   text-black-700">
+							16 Sep 2021 : 8:00 PM to 9:30 PM (MYT)
+						</p>
 					</div>
 				</h1>
 				<h2 className="text-indigo-800 text-centegreen text-xl align-center text-sm font-semibold mt-10">
@@ -77,7 +82,7 @@ export default function Home({ action = '/ycard' }) {
 											English
 										</label>
 									</li>
-									<li className="segmented-control__item "  >
+									<li className="segmented-control__item ">
 										<input
 											className="segmented-control__input"
 											type="radio"
@@ -167,7 +172,8 @@ export default function Home({ action = '/ycard' }) {
 					</div>
 				</div>
 				<div className="text-xs text-gray-500">
-					More Details : Contact : <a href="tel:+60 019-212 8677">+60 019-212 8677</a>
+					More Details : Contact :{' '}
+					<a href="tel:+60 019-212 8677">+60 019-212 8677</a>
 				</div>
 			</div>
 		</div>
