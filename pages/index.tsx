@@ -36,9 +36,13 @@ export default function Home({ action = '/ycard' }) {
 						Malaysia
 					</p>
 
-					<div className="pt-3 text-1xl   text-red-500">
-					<p className="pt-3 text-1xl   text-red-700">மகா சிவராத்திரி -  </p> <p>இருண்டகனத்தில் நம்பிக்கை ஒளி</p>
-						<p className="pt-3 text-1xl   text-red-700"> MAHA SHIVARATRI - </p> <p>IRUNDA GANATHIL NAMIBKKAI OLI</p>
+					<div className="">
+					<p className="pt-2 text-2xl   text-green-900">Ancient Wisdom On</p>
+					
+						<p className="pt-3 text-2xl   text-green-700"> "Emotional Immunity" - Ken O'Donnell  </p> 
+						<p className="pt-1 text-sm   text-green-700">International Speaker, Director, Brahma Kumaris, South America</p>
+						<p className="pt-1 text-sm   text-black-700">16 Sep 2021 : 8:00 PM to 9:30 PM (MYT)</p>
+					
 
 					</div>
 				</h1>
@@ -47,7 +51,7 @@ export default function Home({ action = '/ycard' }) {
 				</h2>
 
 				<h2 className="text-indigo-800 text-centegreen text-sm  align-center text-sm font-semibold mt-3">
-					Get a special value blessing unique to you
+					Get a special value blessing unique to you on this special event
 				</h2>
 				<div className=" w-full mt-6 flex rounded-md shadow-sm">
 					<div className="relative flex-grow focus-within:z-10">
@@ -59,10 +63,10 @@ export default function Home({ action = '/ycard' }) {
 											className="segmented-control__input"
 											type="radio"
 											onChange={() => {
-												setLang('eng-mal');
+												setLang('m-eng');
 											}}
 											name="langType"
-											value="eng-mal"
+											value="m-eng"
 											defaultChecked
 											id="option-1"
 										/>
@@ -73,16 +77,16 @@ export default function Home({ action = '/ycard' }) {
 											English
 										</label>
 									</li>
-									<li className="segmented-control__item hidden" style={{"display":"none"}}>
+									<li className="segmented-control__item "  >
 										<input
 											className="segmented-control__input"
 											type="radio"
 											id="option-2"
 											onChange={() => {
-												setLang('hin');
+												setLang('m-hin');
 											}}
 											name="langType"
-											value="hin"
+											value="m-hin"
 										/>
 										<label
 											className=" py-2 segmented-control__label text-sm font-semibold"
@@ -98,10 +102,29 @@ export default function Home({ action = '/ycard' }) {
 											type="radio"
 											id="option-3"
 											onChange={() => {
-												setLang('tam');
+												setLang('m-ch');
 											}}
 											name="langType"
-											value="tam"
+											value="m-ch"
+										/>
+										<label
+											className="rounded-r py-2 segmented-control__label text-sm font-semibold"
+											htmlFor="option-3"
+										>
+											中国人
+										</label>
+									</li>
+
+									<li className="segmented-control__item">
+										<input
+											className="segmented-control__input"
+											type="radio"
+											id="option-3"
+											onChange={() => {
+												setLang('m-tam');
+											}}
+											name="langType"
+											value="m-tam"
 										/>
 										<label
 											className="rounded-r py-2 segmented-control__label text-sm font-semibold"
@@ -138,7 +161,7 @@ export default function Home({ action = '/ycard' }) {
 
 				<div className="mt-2 max-w-xl text-xs font-medium leading-5 text-gray-500 overflow-hidden">
 					<div className="text-xs">
-						@Copyrights 2020.
+						@Copyrights 2021.
 						<a href="https://www.brahmakumaris.com">Brahma Kumaris </a> -
 						<a href="https://brahmakumaris.my"> Malaysia</a>
 					</div>
