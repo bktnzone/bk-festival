@@ -124,7 +124,7 @@ export default function Home({ action = '/ycard' }) {
 										<input
 											className="segmented-control__input"
 											type="radio"
-											id="option-3"
+											id="option-4"
 											onChange={() => {
 												setLang('m-tam');
 											}}
@@ -133,7 +133,7 @@ export default function Home({ action = '/ycard' }) {
 										/>
 										<label
 											className="rounded-r py-2 segmented-control__label text-sm font-semibold"
-											htmlFor="option-3"
+											htmlFor="option-4"
 										>
 											தமிழ்
 										</label>
